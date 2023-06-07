@@ -15,6 +15,17 @@ app.use(express.json());
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoute);
 
+const express = require('express');
+const path = require('path');
+
+// Serve static assets
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+// Catch-all route to handle client-side routing
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
