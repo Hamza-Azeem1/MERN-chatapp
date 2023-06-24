@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes")
@@ -15,7 +15,6 @@ app.use(express.json());
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoute);
 
-const express = require('express');
 const path = require('path');
 
 // Serve static assets
