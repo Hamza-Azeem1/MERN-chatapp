@@ -1,8 +1,0 @@
-[build]
-  command = "npm run build"     # Build command for the frontend React app
-  publish = "client/build"     # Publish directory for the frontend build artifacts
-
-[[redirects]]
-  from = "/*"                  # Redirect all requests to the frontend app
-  to = "/index.html"
-  status = 200
